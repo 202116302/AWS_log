@@ -23,7 +23,7 @@ def main():
     del last_data[3:6]
     del last_data[8:13]
 
-    thingspeak_key = os.environ['thingspeak_key']
+    thingspeak_key = os.environ['THINGSPEAK_KEY']
 
     urllib.request.urlopen(
         "https://api.thingspeak.com/update?api_key={}&field1={:0.1f}&field2={:0.1f}&field3={:0.1f}&field4={:0.1f}&field5={:0.1f}&field6={:0.1f}&field7={:0.1f}&field8={:0.1f}".format(thingspeak_key,
