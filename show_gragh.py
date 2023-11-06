@@ -1,13 +1,12 @@
 import requests
 from datetime import date, timedelta, datetime
 import pandas as pd
-import seaborn as sns
 import matplotlib
-
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 
+# 시간대별 그래프 그리는 코드
 def show_graph(df1, df2, par1, par2, name):
     plt.figure(figsize=(16, 4))
 
@@ -28,7 +27,6 @@ def show_graph(df1, df2, par1, par2, name):
     # 그래프 표시
     plt.grid(True)
     plt.savefig(f'output/{name}.png')
-
 
 
 
@@ -104,28 +102,24 @@ def main():
 
     aws_data = aws_data.drop(aws_data.index[0])
 
-
     df['date'] = df['time'].str.split(" ").str[0]
     df['time2'] = df['time'].str.split(" ").str[1]
-
 
     columns_to_convert = ['temp', 'humid', 'sunshine', 'wind_dir', 'wind_speed', 'rainfall', 'wind_speed_max', 'v']
     df[columns_to_convert] = df[columns_to_convert].astype(float)
 
-
     data_mean = df.groupby('date')[columns_to_convert].mean().round(2)
-
 
 
     df = df[df['time2'].str.endswith("00")]
 
     data_time = df.groupby('time2')[columns_to_convert].mean().round(2)
-    # print(data_time)
+
 
     ######## 시간별 데이터    전체 평균 vs 일주일 평균 비교  #####
 
-    # for item1, item2 in zip(columns, columns_to_convert):
-    #     show_graph(data_time, aws_data, item1, item2, item2)
+    for item1, item2 in zip(columns, columns_to_convert):
+        show_graph(data_time, aws_data, item1, item2, item2)
 
 
 
@@ -153,7 +147,7 @@ def main():
     plt.plot(data_mean.index, data_mean['sunshine'], marker='s', linestyle='-.', color="yellow")
     plt.title('sunshine')
     plt.xlabel('date')
-    plt.ylabel('lux(lx)')
+    plt.ylabel('lux(W/m^2)')
 
     # 서브플롯 4 (2x4 그리드 중 4)
     plt.subplot(2, 4, 4)
