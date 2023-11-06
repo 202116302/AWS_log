@@ -8,6 +8,7 @@
 <br>
 
 - show_graph.py -> 기상대 데이터 , thingspeak 데이터 그래프
+### 강우는 누적을 했어야..하는 부분 -> 추후 수정 필요 
 
 ### 일주일간 thingspeak에 로깅된 데이터로 그린 일별 평균 그래프 
 ![](output/weekdata.png)
