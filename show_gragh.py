@@ -124,82 +124,76 @@ def main():
 
     ######## 시간별 데이터    전체 평균 vs 일주일 평균 비교  #####
 
-    for item1, item2 in zip(columns, columns_to_convert):
-        show_graph(data_time, aws_data, item1, item2, item2)
+    # for item1, item2 in zip(columns, columns_to_convert):
+    #     show_graph(data_time, aws_data, item1, item2, item2)
 
 
 
     ###### 일주일간 일평균 데이터  #####
 
-    # plt.plot(data_mean.index, data_mean['temp'], marker='o', linestyle='-')
-    #
-    # # 일주일간 일평균 온도 그래프
-    # plt.title('temperature 11-30 ~ 11-06')
-    # plt.xlabel('temperature')
-    # plt.ylabel('date')
-    #
-    # plt.show()
-    #
-    # plt.figure(figsize=(16, 8))  # 그래프 영역 설정
-    #
-    # # 서브플롯 1 (2x4 그리드 중 1)
-    # plt.subplot(2, 4, 1)
-    # plt.plot(data_mean.index, data_mean['temp'], marker='o', color='red')
-    # plt.title('temperature')
-    # plt.xlabel('date')
-    # plt.ylabel('temp(℃)')
-    #
-    # # 서브플롯 2 (2x4 그리드 중 2)
-    # plt.subplot(2, 4, 2)
-    # plt.plot(data_mean.index, data_mean['humid'], marker='x', linestyle='--')
-    # plt.title('humidity')
-    # plt.xlabel('date')
-    # plt.ylabel('humid(%)')
-    #
-    # # 서브플롯 3 (2x4 그리드 중 3)
-    # plt.subplot(2, 4, 3)
-    # plt.plot(data_mean.index, data_mean['sunshine'], marker='s', linestyle='-.', color="yellow")
-    # plt.title('sunshine')
-    # plt.xlabel('date')
-    # plt.ylabel('lux(lx)')
-    #
-    # # 서브플롯 4 (2x4 그리드 중 4)
-    # plt.subplot(2, 4, 4)
-    # plt.plot(data_mean.index, data_mean['wind_dir'], marker='^', linestyle=':', color='black')
-    # plt.title('wind_dir')
-    # plt.xlabel('date')
-    # plt.ylabel('dir(°)')
-    #
-    # plt.subplot(2, 4, 5)
-    # plt.plot(data_mean.index, data_mean['wind_speed'], marker='o', color='black')
-    # plt.title('wind_speed')
-    # plt.xlabel('date')
-    # plt.ylabel('speed(m/s')
-    #
-    # # 서브플롯 2 (2x4 그리드 중 2)
-    # plt.subplot(2, 4, 6)
-    # plt.plot(data_mean.index, data_mean['rainfall'], marker='x', linestyle='--', color='navy')
-    # plt.title('rainfall')
-    # plt.xlabel('date')
-    # plt.ylabel('rainfall(mm)')
-    #
-    # # 서브플롯 3 (2x4 그리드 중 3)
-    # plt.subplot(2, 4, 7)
-    # plt.plot(data_mean.index, data_mean['wind_speed_max'], marker='s', linestyle='-.', color='black')
-    # plt.title('wind_speed_max')
-    # plt.xlabel('date')
-    # plt.ylabel('speed(m/s)')
-    #
-    # # 서브플롯 4 (2x4 그리드 중 4)
-    # plt.subplot(2, 4, 8)
-    # plt.plot(data_mean.index, data_mean['v'], marker='^', linestyle=':' , color='black')
-    # plt.title('battery_v')
-    # plt.xlabel('date')
-    # plt.ylabel('v')
-    #
-    # # 그래프 표시
-    # plt.tight_layout()  # 그래프 간격 조정
-    # plt.show()
+
+    plt.figure(figsize=(16, 8))  # 그래프 영역 설정
+
+    # 서브플롯 1 (2x4 그리드 중 1)
+    plt.subplot(2, 4, 1)
+    plt.plot(data_mean.index, data_mean['temp'], marker='o', color='red')
+    plt.title('temperature')
+    plt.xlabel('date')
+    plt.ylabel('temp(℃)')
+
+    # 서브플롯 2 (2x4 그리드 중 2)
+    plt.subplot(2, 4, 2)
+    plt.plot(data_mean.index, data_mean['humid'], marker='x', linestyle='--')
+    plt.title('humidity')
+    plt.xlabel('date')
+    plt.ylabel('humid(%)')
+
+    # 서브플롯 3 (2x4 그리드 중 3)
+    plt.subplot(2, 4, 3)
+    plt.plot(data_mean.index, data_mean['sunshine'], marker='s', linestyle='-.', color="yellow")
+    plt.title('sunshine')
+    plt.xlabel('date')
+    plt.ylabel('lux(lx)')
+
+    # 서브플롯 4 (2x4 그리드 중 4)
+    plt.subplot(2, 4, 4)
+    plt.plot(data_mean.index, data_mean['wind_dir'], marker='^', linestyle=':', color='black')
+    plt.title('wind_dir')
+    plt.xlabel('date')
+    plt.ylabel('dir(°)')
+
+    plt.subplot(2, 4, 5)
+    plt.plot(data_mean.index, data_mean['wind_speed'], marker='o', color='black')
+    plt.title('wind_speed')
+    plt.xlabel('date')
+    plt.ylabel('speed(m/s')
+
+    # 서브플롯 2 (2x4 그리드 중 2)
+    plt.subplot(2, 4, 6)
+    plt.plot(data_mean.index, data_mean['rainfall'], marker='x', linestyle='--', color='navy')
+    plt.title('rainfall')
+    plt.xlabel('date')
+    plt.ylabel('rainfall(mm)')
+
+    # 서브플롯 3 (2x4 그리드 중 3)
+    plt.subplot(2, 4, 7)
+    plt.plot(data_mean.index, data_mean['wind_speed_max'], marker='s', linestyle='-.', color='black')
+    plt.title('wind_speed_max')
+    plt.xlabel('date')
+    plt.ylabel('speed(m/s)')
+
+    # 서브플롯 4 (2x4 그리드 중 4)
+    plt.subplot(2, 4, 8)
+    plt.plot(data_mean.index, data_mean['v'], marker='^', linestyle=':' , color='black')
+    plt.title('battery_v')
+    plt.xlabel('date')
+    plt.ylabel('v')
+
+    # 그래프 표시
+    plt.tight_layout()  # 그래프 간격 조정
+
+    plt.savefig("output/weekdata.png")
+    plt.show()
 
 
 if __name__ == '__main__':
