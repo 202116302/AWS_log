@@ -14,12 +14,12 @@
 ![](output/weekdata.png)
 *11월 5일 비가 왔는데 강우가 0인 이유 
 
-![img.png](img.png)
+![img.png](image/img.png)
 
 thingspeak_log.py에서는 정시마다 기상대 데이터를 전송<br>
 정시에 강우가 0인경우가 있었음
 
-![img_2.png](img_2.png)
+![img_2.png](image/img_2.png)
 
 비가 계속 내렸음에도 불구하고 강우 값이 같은 값으로 끊겨서 들어옴
 

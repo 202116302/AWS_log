@@ -7,9 +7,9 @@ import requests
 def get_db_connection():
     return psycopg2.connect(
         host='localhost',
-        database='smartfarm',
+        database='aws_log',
         user='hyejin',
-        password='your_password'
+        password='smartfarm'
     )
 
 
@@ -58,11 +58,11 @@ def save_to_db(data):
     print(f"✅ {saved_count}개 새 데이터 저장 완료")
 
 
-def main():
-    current_date = datetime.now()
-    year = current_date.year
-    month = str(current_date.month).zfill(2)
-    day = str(current_date.day).zfill(2)
+    def main():
+        current_date = datetime.now()
+        year = current_date.year
+        month = str(current_date.month).zfill(2)
+        day = str(current_date.day).zfill(2)
 
     print(f"📡 {year}-{month}-{day} 기상 데이터 수집 중...")
     data = get_aws(year, month, day)
